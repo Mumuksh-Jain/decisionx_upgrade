@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import InteractiveOrbitalHero from "@/components/InteractiveOrbitalHero";
+import LiveAuditSimulation from "@/components/LiveAuditSimulation";
 import {
   Activity,
   ShieldCheck,
@@ -14,7 +16,9 @@ import {
   Sparkles,
   CheckCircle2,
   Lock,
-  Cpu
+  Cpu,
+  Layers,
+  Check
 } from "lucide-react";
 
 export default function Home() {
@@ -23,191 +27,161 @@ export default function Home() {
       <Header />
 
       <main className="enterprise-container" style={{ flex: 1, paddingBottom: 40 }}>
-        {/* Hero Section */}
-        <section style={{ textAlign: "center", padding: "40px 16px 48px 16px" }}>
-          <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 18 }}>
-            <span className="nm-pill nm-pill-gold">
-              DECISIONX ENTERPRISE v3.2
-            </span>
-            <span className="nm-pill nm-pill-blue">
-              PRODUCTION AI GOVERNANCE
-            </span>
-          </div>
-
-          <h1
-            style={{
-              fontSize: "clamp(2rem, 4.5vw, 3.2rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.03em",
-              color: "var(--text-main)",
-              maxWidth: 960,
-              margin: "0 auto 18px auto",
-              lineHeight: 1.15,
-            }}
-          >
-            Autonomous Epistemic Diagnostics & Guardrails for High-Stakes AI
-          </h1>
-
-          <p
-            style={{
-              fontSize: "1.05rem",
-              color: "var(--text-muted)",
-              maxWidth: 720,
-              margin: "0 auto 32px auto",
-              lineHeight: 1.6,
-            }}
-          >
-            Detect hallucinations, prevent covert disparate impact, and enforce NIST/OWASP safety boundaries using dialectic multi-agent consensus, retrieval-backed proposition grounding, and executable system prompt patches.
-          </p>
-
+        {/* Hero Section: Editorial Headline + Interactive Orbital Celestial Vector */}
+        <section style={{ padding: "40px 0 60px 0" }}>
           <div
             style={{
-              display: "flex",
-              justifyContent: "center",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
               alignItems: "center",
-              gap: 14,
-              flexWrap: "wrap",
+              gap: 40,
             }}
           >
-            <Link
-              href="/analyzer"
-              className="nm-button nm-button-primary"
-              style={{
-                fontSize: "0.95rem",
-                padding: "12px 28px",
-                borderRadius: 12,
-                gap: 8,
-              }}
-            >
-              <Activity size={18} />
-              <span style={{ fontWeight: 800 }}>Launch Mission Control</span>
-              <ArrowRight size={16} />
-            </Link>
+            {/* Left Column: Mission Control Pitch */}
+            <div>
+              <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 20 }}>
+                <span className="nm-pill nm-pill-gold">
+                  DECISIONX ENTERPRISE v3.2
+                </span>
+                <span className="nm-pill nm-pill-blue">
+                  NIST AI RMF 1.0 & OWASP ALIGNED
+                </span>
+              </div>
 
-            <Link
-              href="/benchmarks"
-              className="nm-button"
-              style={{
-                fontSize: "0.95rem",
-                padding: "12px 24px",
-                borderRadius: 12,
-              }}
-            >
-              <Terminal size={18} />
-              <span>Explore Benchmark Lab</span>
-            </Link>
+              <h1
+                style={{
+                  fontSize: "clamp(2.1rem, 3.8vw, 3.4rem)",
+                  fontWeight: 800,
+                  letterSpacing: "-0.035em",
+                  color: "var(--text-main)",
+                  lineHeight: 1.14,
+                  marginBottom: 20,
+                }}
+              >
+                Autonomous Epistemic Diagnostics & Guardrails for High-Stakes AI
+              </h1>
+
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  color: "var(--text-muted)",
+                  lineHeight: 1.65,
+                  marginBottom: 32,
+                  maxWidth: 580,
+                }}
+              >
+                Detect hallucinations, prevent covert disparate impact, and enforce mathematical safety boundaries using dialectic multi-agent consensus, retrieval-backed proposition grounding, and executable system prompt patches.
+              </p>
+
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 14,
+                  flexWrap: "wrap",
+                  marginBottom: 36,
+                }}
+              >
+                <Link
+                  href="/analyzer"
+                  className="nm-button nm-button-primary"
+                  style={{
+                    fontSize: "0.95rem",
+                    padding: "13px 28px",
+                    borderRadius: 12,
+                    gap: 8,
+                  }}
+                >
+                  <Activity size={18} />
+                  <span style={{ fontWeight: 800 }}>Launch Mission Control</span>
+                  <ArrowRight size={16} />
+                </Link>
+
+                <Link
+                  href="/benchmarks"
+                  className="nm-button"
+                  style={{
+                    fontSize: "0.95rem",
+                    padding: "13px 24px",
+                    borderRadius: 12,
+                    gap: 8,
+                  }}
+                >
+                  <Terminal size={18} />
+                  <span>Explore Benchmark Lab</span>
+                </Link>
+              </div>
+
+              {/* 4 Architecture Pillars Chips */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  gap: 12,
+                  maxWidth: 540,
+                }}
+              >
+                <div className="nm-inset" style={{ padding: "10px 14px", borderRadius: 10, display: "flex", alignItems: "center", gap: 10 }}>
+                  <Users size={16} color="var(--accent-gold)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 700 }}>3-Agent Dialectic Consensus</span>
+                </div>
+                <div className="nm-inset" style={{ padding: "10px 14px", borderRadius: 10, display: "flex", alignItems: "center", gap: 10 }}>
+                  <Search size={16} color="var(--accent-green)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 700 }}>Tavily Fact Citations</span>
+                </div>
+                <div className="nm-inset" style={{ padding: "10px 14px", borderRadius: 10, display: "flex", alignItems: "center", gap: 10 }}>
+                  <Terminal size={16} color="var(--accent-blue)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 700 }}>XML Meta-Prompt Patcher</span>
+                </div>
+                <div className="nm-inset" style={{ padding: "10px 14px", borderRadius: 10, display: "flex", alignItems: "center", gap: 10 }}>
+                  <FileCheck size={16} color="var(--accent-gold)" />
+                  <span style={{ fontSize: "0.8rem", fontWeight: 700 }}>SHA-256 Tamper Ledger</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column: Celestial Interactive Orbital Halo */}
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <InteractiveOrbitalHero />
+            </div>
           </div>
         </section>
 
-        {/* Live Interactive Product Teaser Card */}
-        <section style={{ marginBottom: 48 }}>
-          <div
-            className="nm-card fade-in-up"
-            style={{
-              padding: "28px",
-              borderRadius: 20,
-              borderTop: "4px solid var(--accent-gold)",
-            }}
-          >
-            <div
+        {/* Live Interactive Benchmark Simulation Section */}
+        <section style={{ marginBottom: 56 }}>
+          <div style={{ textAlign: "center", marginBottom: 28 }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: 8, marginBottom: 12 }}>
+              <span className="nm-pill nm-pill-gold">
+                INTERACTIVE AUDIT LABORATORY
+              </span>
+              <span className="nm-pill nm-pill-green">
+                ZERO-LATENCY RADAR SIMULATION
+              </span>
+            </div>
+            <h2
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexWrap: "wrap",
-                gap: 14,
-                borderBottom: "1px solid var(--border-subtle)",
-                paddingBottom: 16,
-                marginBottom: 20,
+                fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.03em",
+                color: "var(--text-main)",
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span className="mono" style={{ fontSize: "0.82rem", fontWeight: 800, color: "var(--accent-gold)" }}>
-                  TELEMETRY HUD PREVIEW
-                </span>
-                <span className="nm-pill nm-pill-green" style={{ fontSize: "0.7rem" }}>
-                  LIVE ARBITER ENGINE
-                </span>
-              </div>
-              <div className="mono" style={{ fontSize: "0.78rem", color: "var(--text-dim)" }}>
-                MODEL: GROQ LLAMA-3.3-70B • GROUNDING: TAVILY API
-              </div>
-            </div>
-
-            {/* 4 Quick Stat Wells */}
-            <div
+              Dialectic Multi-Agent Audit in Real-Time
+            </h2>
+            <p
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                gap: 16,
-                marginBottom: 20,
+                fontSize: "0.92rem",
+                color: "var(--text-muted)",
+                maxWidth: 680,
+                margin: "8px auto 0 auto",
+                lineHeight: 1.6,
               }}
             >
-              <div className="nm-inset" style={{ padding: "16px", borderRadius: 12 }}>
-                <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "var(--text-dim)" }}>CALIBRATED RISK FLOOR</div>
-                <div className="mono" style={{ fontSize: "1.7rem", fontWeight: 800, color: "var(--accent-red)", marginTop: 4 }}>
-                  78 <span style={{ fontSize: "0.8rem", color: "var(--text-dim)" }}>/100</span>
-                </div>
-                <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", marginTop: 4 }}>High-stakes clinical hazard detected</div>
-              </div>
-
-              <div className="nm-inset" style={{ padding: "16px", borderRadius: 12 }}>
-                <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "var(--text-dim)" }}>FACTUAL GROUNDING</div>
-                <div className="mono" style={{ fontSize: "1.7rem", fontWeight: 800, color: "var(--accent-gold)", marginTop: 4 }}>
-                  40%
-                </div>
-                <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", marginTop: 4 }}>2 of 5 claims verified via web citations</div>
-              </div>
-
-              <div className="nm-inset" style={{ padding: "16px", borderRadius: 12 }}>
-                <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "var(--text-dim)" }}>DIALECTIC CONSENSUS</div>
-                <div className="mono" style={{ fontSize: "1.7rem", fontWeight: 800, color: "var(--accent-blue)", marginTop: 4 }}>
-                  3 / 3
-                </div>
-                <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", marginTop: 4 }}>Critic, Optimist & Realist converged</div>
-              </div>
-
-              <div className="nm-inset" style={{ padding: "16px", borderRadius: 12 }}>
-                <div style={{ fontSize: "0.74rem", fontWeight: 700, color: "var(--text-dim)" }}>PROMPT PATCH STATUS</div>
-                <div className="mono" style={{ fontSize: "1.7rem", fontWeight: 800, color: "var(--accent-green)", marginTop: 4 }}>
-                  READY
-                </div>
-                <div style={{ fontSize: "0.72rem", color: "var(--text-muted)", marginTop: 4 }}>XML meta-prompt patch compiled</div>
-              </div>
-            </div>
-
-            {/* Quick Live Demo Prompt Banner */}
-            <div
-              className="nm-inset"
-              style={{
-                padding: "16px 20px",
-                borderRadius: 12,
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexWrap: "wrap",
-                gap: 12,
-              }}
-            >
-              <div>
-                <span style={{ fontSize: "0.74rem", fontWeight: 800, textTransform: "uppercase", color: "var(--accent-gold)" }}>
-                  Sample High-Stakes Evaluation:
-                </span>
-                <p style={{ fontSize: "0.88rem", fontWeight: 600, color: "var(--text-main)", marginTop: 2 }}>
-                  Pediatric Dual NSAID Stacking & Hallucinated 2024 Lancet Clinical Trial
-                </p>
-              </div>
-
-              <Link
-                href="/analyzer"
-                className="nm-button nm-button-primary"
-                style={{ padding: "8px 16px", fontSize: "0.8rem", gap: 6 }}
-              >
-                <span>Run This Diagnostic Live</span>
-                <ArrowRight size={14} />
-              </Link>
-            </div>
+              Select any high-liability scenario below to inspect how DecisionX eliminates hallucinations, recalculates calibrated risk envelopes, and generates immediate XML system prompt patches.
+            </p>
           </div>
+
+          <LiveAuditSimulation />
         </section>
 
         {/* 4 Enterprise Pillars Grid */}

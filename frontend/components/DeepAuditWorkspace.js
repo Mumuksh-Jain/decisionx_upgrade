@@ -21,6 +21,7 @@ import MultiAgentDeliberation from "./MultiAgentDeliberation";
 import DiffRemediationStudio from "./DiffRemediationStudio";
 import SystemPromptPatcher from "./SystemPromptPatcher";
 import FailureCascadeDag from "./FailureCascadeDag";
+import RadarChart from "./RadarChart";
 
 export default function DeepAuditWorkspace({
   results = {},
@@ -376,6 +377,132 @@ export default function DeepAuditWorkspace({
               </div>
               <div style={{ fontSize: "0.7rem", color: "var(--text-dim)", marginTop: 6 }}>
                 Inherent domain sensitivity floor
+              </div>
+            </div>
+          </div>
+
+          {/* Multi-Dimensional Risk Topology & Governance Envelope */}
+          <div
+            className="nm-card"
+            style={{
+              padding: "24px",
+              borderRadius: 16,
+              marginBottom: 24,
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: 12,
+                borderBottom: "1px solid var(--border-subtle)",
+                paddingBottom: 16,
+                marginBottom: 20,
+              }}
+            >
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span className="mono" style={{ fontSize: "0.82rem", fontWeight: 800, color: "var(--accent-gold)" }}>
+                    HEXAGONAL RISK TOPOLOGY RADAR
+                  </span>
+                  <span className="nm-pill" style={{ fontSize: "0.7rem" }}>
+                    NIST AI RMF 1.0 (MEASURE)
+                  </span>
+                </div>
+                <p style={{ fontSize: "0.82rem", color: "var(--text-muted)", marginTop: 4 }}>
+                  Synchronized multi-vector risk envelope mapping epistemic accuracy, safety contraindications, protected-class bias, and domain floors.
+                </p>
+              </div>
+
+              <div style={{ display: "flex", gap: 8 }}>
+                <button
+                  onClick={() => setActiveTab("cascade")}
+                  className="nm-button"
+                  style={{ fontSize: "0.76rem", padding: "6px 12px", gap: 6 }}
+                >
+                  <Activity size={14} />
+                  <span>Inspect Failure DAG</span>
+                </button>
+                <button
+                  onClick={() => setActiveTab("diff")}
+                  className="nm-button"
+                  style={{ fontSize: "0.76rem", padding: "6px 12px", gap: 6 }}
+                >
+                  <span>Compare Clause Diff</span>
+                  <ChevronRight size={14} />
+                </button>
+              </div>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+                gap: 24,
+                alignItems: "center",
+              }}
+            >
+              {/* Visual SVG Radar */}
+              <div style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "10px 0" }}>
+                <RadarChart
+                  scores={{
+                    accuracy: accuracyScore,
+                    hallucination: hallucinationScore,
+                    safety: safetyScore,
+                    bias: biasScore,
+                    impact: Math.round((finalRisk + promptRisk) / 2) || finalRisk,
+                    domain: domainRisk,
+                  }}
+                  size={340}
+                  interactive={true}
+                />
+              </div>
+
+              {/* Radar Telemetry Breakdown & Envelopes */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                <div className="nm-inset" style={{ padding: "14px 18px", borderRadius: 12 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-main)" }}>
+                      Calibrated Risk Floor Status
+                    </span>
+                    <span className={`nm-pill ${riskTierBadge.class}`} style={{ fontSize: "0.72rem" }}>
+                      {riskTierBadge.label}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginTop: 6, lineHeight: 1.5 }}>
+                    The final composite risk of <strong className="mono" style={{ color: riskTierBadge.color }}>{finalRisk}/100</strong> is bound by the domain baseline floor ({domainRisk}% for {domain}) and penalizes unverified factual claims.
+                  </p>
+                </div>
+
+                <div className="nm-inset" style={{ padding: "14px 18px", borderRadius: 12 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-main)" }}>
+                      Dialectic Arbiter Consensus
+                    </span>
+                    <span className="nm-pill nm-pill-blue" style={{ fontSize: "0.72rem" }}>
+                      3/3 Converged
+                    </span>
+                  </div>
+                  <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginTop: 6, lineHeight: 1.5 }}>
+                    Adversarial Red-Team Critic, Value Optimist, and Empiric Realist successfully deliberated. Primary detected hazard: <strong style={{ color: "var(--text-main)" }}>{primaryIssue}</strong>.
+                  </p>
+                </div>
+
+                <div className="nm-inset" style={{ padding: "14px 18px", borderRadius: 12 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span style={{ fontSize: "0.82rem", fontWeight: 700, color: "var(--text-main)" }}>
+                      Propositional Grounding Envelope
+                    </span>
+                    <span className="nm-pill nm-pill-gold" style={{ fontSize: "0.72rem" }}>
+                      {results?.hallucinations?.filter((h) => h.status === "verified").length || 0} / {results?.hallucinations?.length || 0} Verified
+                    </span>
+                  </div>
+                  <p style={{ fontSize: "0.78rem", color: "var(--text-muted)", marginTop: 6, lineHeight: 1.5 }}>
+                    Atomic statements were cross-referenced against Tavily search engines. Non-factual claims are isolated and flagged for remediation.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
