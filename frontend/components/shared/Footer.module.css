@@ -1,0 +1,45 @@
+.footer {
+  width: 100%;
+  border-top: 1px solid #d8cec0;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  color: #6f665d;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+}
+
+.links a {
+  color: #6f665d;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.links a:hover {
+  color: #111111;
+}
+
+@media (max-width: 640px) {
+  .container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

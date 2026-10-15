@@ -1,0 +1,145 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f1e9;
+  color: #111111;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section {
+  background: #e7ddcf;
+  border: 1px solid #d8cec0;
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.sectionTitle {
+  margin: 0 0 20px;
+  font-size: 1.05rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #111111;
+  letter-spacing: -0.015em;
+}
+
+.analyzeButton {
+  margin-top: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.analyzeButton:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.analyzeButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.analyzeButton:disabled,
+.analyzeButton.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.error {
+  background: rgba(194, 58, 58, 0.06);
+  border: 1px solid rgba(194, 58, 58, 0.2);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.error h3 {
+  margin: 0 0 6px;
+  color: #c23a3a;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.error p {
+  margin: 0;
+  color: #a03030;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+.infoCard,
+.guideItem {
+  background: #f0e8db;
+  border: 1px solid #d8cec0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.infoCard h3,
+.guideItem h3 {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  font-weight: 600;
+  color: #111111;
+}
+
+.guideItem p {
+  margin: 0;
+  color: #3f3a34;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tipList {
+  margin: 0;
+  padding-left: 18px;
+  color: #3f3a34;
+}
+
+.tipList li {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.tipList li + li {
+  margin-top: 4px;
+}
+
+.guideList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 44px 20px 64px;
+  }
+
+  .section {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 36px 16px 56px;
+  }
+}

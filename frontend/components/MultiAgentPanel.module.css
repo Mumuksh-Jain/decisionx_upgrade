@@ -1,0 +1,74 @@
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  padding: 18px;
+  background: #e7ddcf;
+  border: 1px solid #d8cec0;
+  border-radius: 14px;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 300ms ease, transform 300ms ease, border-color 200ms ease;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  border-color: #c6bba9;
+}
+
+.card.critic {
+  border-left: 2px solid #c23a3a;
+}
+
+.card.optimist {
+  border-left: 2px solid #2d8659;
+}
+
+.card.realist {
+  border-left: 2px solid #0d7377;
+}
+
+.agentName {
+  margin: 0 0 10px;
+  color: #111111;
+  font-size: 0.85rem;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.card.critic .agentName { color: #c23a3a; }
+.card.optimist .agentName { color: #2d8659; }
+.card.realist .agentName { color: #0d7377; }
+
+.content,
+.bulletList {
+  margin: 0;
+  color: #3f3a34;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.bulletList {
+  padding-left: 18px;
+}
+
+.bulletList li + li {
+  margin-top: 6px;
+}
+
+.bulletList li::marker {
+  color: #b7ab98;
+}

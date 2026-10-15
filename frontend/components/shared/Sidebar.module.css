@@ -1,0 +1,85 @@
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-right: 1px solid #ebebeb;
+}
+
+.header {
+  padding: 20px 24px 16px;
+}
+
+.title {
+  margin: 0;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.version {
+  margin: 4px 0 0;
+  color: #94949c;
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.navMenu {
+  flex: 1;
+  padding: 0 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem,
+.footerItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  color: #52525b;
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  font-weight: 450;
+  transition: background 200ms ease, color 200ms ease;
+}
+
+.navItem:hover,
+.footerItem:hover {
+  background: #fafbfc;
+  color: #1a1a1a;
+}
+
+.navItem.active {
+  background: #fafbfc;
+  color: #1a1a1a;
+  font-weight: 500;
+}
+
+.icon {
+  font-size: 0.95rem;
+}
+
+.label {
+  display: block;
+}
+
+.footer {
+  padding: 12px;
+  border-top: 1px solid #ebebeb;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    display: none;
+  }
+}

@@ -1,0 +1,264 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f5f1e9;
+  color: #111111;
+}
+
+.container {
+  flex: 1;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.hero {
+  padding: 0;
+}
+
+.title {
+  margin: 0 0 12px;
+  font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 52ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #3f3a34;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #111111;
+  letter-spacing: -0.015em;
+}
+
+.grid,
+.verificationList,
+.securityGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.card,
+.verificationItem,
+.securityCard,
+.ctaSection,
+.architecture,
+.principle {
+  background: #e7ddcf;
+  border: 1px solid #d8cec0;
+  border-radius: 12px;
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+
+.card:hover,
+.verificationItem:hover,
+.securityCard:hover {
+  border-color: #c6bba9;
+  transform: translateY(-1px);
+}
+
+.card,
+.verificationItem,
+.securityCard {
+  padding: 20px;
+}
+
+.card h3,
+.verificationItem h4,
+.securityCard h4,
+.principle h4 {
+  margin: 0 0 8px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #111111;
+  font-weight: 600;
+}
+
+.card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.card li,
+.verificationItem p,
+.securityCard p,
+.principle p,
+.step p {
+  margin: 0;
+  color: #3f3a34;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.card li + li {
+  margin-top: 6px;
+}
+
+.card li::marker {
+  color: #6f665d;
+}
+
+.architecture {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.flow {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  min-width: 100%;
+}
+
+.step {
+  min-width: 150px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #f0e8db;
+  border: 1px solid #d8cec0;
+  text-align: left;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #111111;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+  color: #6f665d;
+  font-size: 1rem;
+}
+
+.principlesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.principle {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  align-items: flex-start;
+  border-radius: 0;
+  border-left: 1px solid #d8cec0;
+  border-right: 1px solid #d8cec0;
+  border-top: 1px solid #d8cec0;
+}
+
+.principle:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.principle:last-child {
+  border-bottom: 1px solid #d8cec0;
+  border-radius: 0 0 8px 8px;
+}
+
+.principleNum {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f0e8db;
+  border: 1px solid #d8cec0;
+  color: #3f3a34;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.ctaSection {
+  text-align: left;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ctaSection h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.ctaButton {
+  width: fit-content;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+
+.ctaButton:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 48px 20px 64px;
+  }
+
+  .flow {
+    flex-wrap: wrap;
+  }
+
+  .arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 36px 16px 56px;
+    gap: 40px;
+  }
+
+  .grid,
+  .verificationList,
+  .securityGrid {
+    grid-template-columns: 1fr;
+  }
+}

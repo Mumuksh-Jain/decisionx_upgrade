@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./frontend/*"],
+      "@/components/*": ["./frontend/components/*"],
+      "@/services/*": ["./frontend/services/*"],
+      "@/utils/*": ["./frontend/utils/*"],
+      "@/backend/*": ["./backend/*"]
+    }
+  }
+}

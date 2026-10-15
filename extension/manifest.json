@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "DecisionX ChatGPT Analyzer",
+  "version": "0.1.0",
+  "description": "Analyze ChatGPT responses in real-time using DecisionX backend.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "http://localhost:3000/*",
+    "http://127.0.0.1:3000/*",
+    "https://claude.ai/new"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*", "https://chat.openai.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

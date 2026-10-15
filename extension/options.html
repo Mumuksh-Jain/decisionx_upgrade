@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DecisionX Extension Settings</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        font: 14px/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background: #f8fafc;
+        color: #0f172a;
+      }
+      .card {
+        max-width: 520px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 18px;
+      }
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      input {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #cbd5f5;
+        font: inherit;
+      }
+      button {
+        margin-top: 12px;
+        background: #0f172a;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .status {
+        margin-top: 8px;
+        font-size: 12px;
+        color: #475569;
+      }
+      .hint {
+        margin-top: 6px;
+        font-size: 12px;
+        color: #64748b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>DecisionX API Settings</h1>
+      <label for="apiUrl">Backend analyze URL</label>
+      <input id="apiUrl" type="url" placeholder="http://localhost:3000/api/analyze" />
+      <div class="hint">Use your hosted API URL or localhost for development.</div>
+      <button id="saveButton" type="button">Save</button>
+      <div id="status" class="status"></div>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
